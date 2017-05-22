@@ -3,7 +3,6 @@
 declare -a FILES=(".Xresources"
 		 ".inputrc"
 	         ".bin"
-		 ".config/i3"
 		 ".xlock")
 
 set -e
@@ -20,3 +19,5 @@ do
 	cp -r ./home/$i ~/
 done
 
+# install i3 config
+cp -r ./home/.config/i3 ~/.config/
