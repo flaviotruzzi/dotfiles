@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ## Files/directories to backup
-declare -a FILES=(".Xresources" ".inputrc" ".bin")
+declare -a FILES=(".Xresources" 
+		  ".inputrc"
+		  ".bin")
 
 set -e
 set -x
@@ -15,15 +17,15 @@ fi
 
 # back up i3 config related
 if [[ "$PWD" = */dotfiles ]]; then 
-	rm -irf ./home/.config/i3
-	cp -r ~/.config/i3 ./home/.config/i3
-	rm -irf ./home/.xlock
-	cp -r ~/.xlock ./home/.xlock
+	rm -ir ./home/.config/i3
+	cp -r ~/.config/i3 ./home/.config/
+	rm -ir ./home/.xlock
+	cp -r ~/.xlock ./home/
 fi
 
 ## Back up files
-for i in "${arr[@]}" 
+for i in "${FILES[@]}" 
 do
-	cp -r "~/$i" ./home/ 
+	cp -r ~/$i ./home/ 
 done
 
