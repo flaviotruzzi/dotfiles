@@ -14,14 +14,16 @@ fi
 
 
 # back up i3 config related
-if [[ "$PWD" = */dotfiles/* ]]; then 
+if [[ "$PWD" = */dotfiles ]]; then 
 	rm -irf ./home/.config/i3
 	cp -r ~/.config/i3 ./home/.config/i3
 	rm -irf ./home/.xlock
+	cp -r ~/.xlock ./home/.xlock
 fi
 
 ## Back up files
-for i in "${arr[@]}" do
-	cp -r ~/"$i" ./home/ 
+for i in "${arr[@]}" 
+do
+	cp -r "~/$i" ./home/ 
 done
 

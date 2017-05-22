@@ -210,6 +210,6 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallup-9682.jpg
 # exec_always --no-startup-id xrandr 
 
 exec --no-startup-id i3-msg 'workspace $workspace1; exec google-chrome'
-exec --no-startup-id spotify
+#exec --no-startup-id spotify
 
 exec compton -f
