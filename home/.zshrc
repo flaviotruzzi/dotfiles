@@ -106,3 +106,7 @@ export PIP_VIRTUALENV_BASE=/home/ftruzzi/.virtualenvs
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+    ssh-add
+fi
